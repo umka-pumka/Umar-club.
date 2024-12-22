@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Umar club</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+    />
+    <link rel="stylesheet" href="./css/app.css" />
+  </head>
+  <body>
+    <div class="image-slider">
+      <div class="image-item">
+        <div class="image">
+          <img
+            src="https://doramy.club/wp-content/uploads/2024/10/semya-po-vyboru.jpg"
+            alt="Game Of Thrones"
+            data-series-id="game-of-thrones"
+          />
+        </div>
+        <h3 class="image-title">Семья по выбору</h3>
+      </div>
+      <div class="image-item">
+        <div class="image">
+          <img
+            src="https://doramy.club/wp-content/uploads/2024/11/mister-plankton.jpg"
+            alt="Stranger Things"
+            data-series-id="stranger-things"
+          />
+        </div>
+        <h3 class="image-title">Мистер Планктон</h3>
+      </div>
+      <div class="image-item">
+        <div class="image">
+          <img
+            src="https://doramy.club/wp-content/uploads/2023/06/oxotnichi-psy.jpg"
+            alt="Money Heist"
+            data-series-id="money-heist"
+          />
+        </div>
+        <h3 class="image-title">Охотничие псы</h3>
+      </div>
+      <div class="image-item">
+        <div class="image">
+          <img
+            src="https://doramy.club/wp-content/uploads/2022/11/slabyj-geroj.jpg"
+            alt="13 Reasons Why"
+            data-series-id="13-reasons-why"
+          />
+        </div>
+        <h3 class="image-title">Слабый герой</h3>
+      </div>
+      <div class="image-item">
+        <div class="image">
+          <img
+            src="https://doramy.club/wp-content/uploads/2022/07/boltun.jpg"
+            alt="The 100"
+            data-series-id="the-100"
+          />
+        </div>
+        <h3 class="image-title">Болтун</h3>
+      </div>
+    </div>
+
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-1.11.0.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"
+    ></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
+    ></script>
+    <script>
+      $(document).ready(function () {
+        $(".image-slider").slick({
+          slidesToShow: 4,
+          slidesToScroll: 1,
+          infinite: true,
+          arrows: true,
+          draggable: false,
+          prevArrow: `<button type='button' class='slick-prev slick-arrow'><ion-icon name="arrow-back-outline"></ion-icon></button>`,
+          nextArrow: `<button type='button' class='slick-next slick-arrow'><ion-icon name="arrow-forward-outline"></ion-icon></button>`,
+          dots: true,
+          responsive: [
+            {
+              breakpoint: 1025,
+              settings: {
+                slidesToShow: 3,
+              },
+            },
+            {
+              breakpoint: 480,
+              settings: {
+                slidesToShow: 1,
+                arrows: false,
+                infinite: false,
+              },
+            },
+          ],
+        });
+
+        // Добавляем переходы по клику на изображения
+        $(".image-slider img").on("click", function () {
+          const links = {
+            "game-of-thrones": "https://doramy.club/45399-semya-po-vyboru.html",
+            "stranger-things": "https://doramy.club/45697-mister-plankton.html",
+            "money-heist": "https://doramy.club/37704-1-oxotnichi-psy.html",
+            "13-reasons-why": "https://doramy.club/34154-slabyj-geroj.html",
+            "the-100": "https://doramy.club/32326-1-boltun.html",
+          };
+
+          const seriesId = $(this).data("series-id");
+          if (seriesId && links[seriesId]) {
+            window.open(links[seriesId], "_blank");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
